@@ -25,7 +25,7 @@ services:
       - AWS_SDK_LOAD_CONFIG=true
       - GF_AUTH_SIGV4_AUTH_ENABLED=true
     volumes:
-      - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - ./grafana/grafana.ini:/etc/grafana/grafana.ini
       - grafana_data:/var/lib/grafana
     networks:
