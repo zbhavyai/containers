@@ -1,0 +1,48 @@
+{
+  "realm": "my-realm",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "grafana-client",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "grafana-client-secret",
+      "redirectUris": ["http://localhost:3000/*"],
+      "webOrigins": ["*"],
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "baseUrl": "http://localhost:3000",
+      "rootUrl": "http://localhost:3000"
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "grafana-role",
+        "description": "Admin Grafana role"
+      }
+    ]
+  },
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "email": "admin@localhost",
+      "firstName": "Admin",
+      "lastName": "User",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["grafana-role"]
+    }
+  ]
+}

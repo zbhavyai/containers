@@ -1,0 +1,58 @@
+name: prometheus-grafana-keycloak
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prom_data:/prometheus
+    networks:
+      - pgk_net
+
+  grafana:
+    image: grafana/grafana:7.5.15
+    container_name: grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - grafana_data:/var/lib/grafana
+    networks:
+      - pgk_net
+    depends_on:
+      - keycloak
+
+  keycloak:
+    image: keycloak/keycloak
+    container_name: keycloak
+    command:
+      - start-dev
+      - --import-realm
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+      - ./keycloak/my-realm.json:/opt/keycloak/data/import/my-realm.json:ro
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    networks:
+      - pgk_net
+
+volumes:
+  prom_data:
+  grafana_data:
+  keycloak_data:
+
+networks:
+  pgk_net:
+    driver: bridge
