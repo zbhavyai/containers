@@ -1,0 +1,40 @@
+name: prometheus-grafana
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prom_data:/prometheus
+    networks:
+      - pg_net
+
+  grafana:
+    image: grafana/grafana:7.5.15
+    container_name: grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    environment:
+      - AWS_SDK_LOAD_CONFIG=true
+      - GF_AUTH_SIGV4_AUTH_ENABLED=true
+    volumes:
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - grafana_data:/var/lib/grafana
+    networks:
+      - pg_net
+
+volumes:
+  prom_data:
+  grafana_data:
+
+networks:
+  pg_net:
+    driver: bridge
