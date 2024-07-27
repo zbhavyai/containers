@@ -1,0 +1,42 @@
+name: wordpress-mysql
+
+services:
+  db:
+    image: mysql
+    container_name: mysql
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=homesite
+      - MYSQL_USER=homesite
+      - MYSQL_PASSWORD=homesite
+      - MYSQL_ROOT_PASSWORD=homesite
+    networks:
+      - wm_net
+
+  wordpress:
+    image: wordpress
+    container_name: wordpress
+    depends_on:
+      - db
+    restart: always
+    volumes:
+      - wordpress_data:/var/www/html
+    ports:
+      - 80:80
+    environment:
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_NAME=homesite
+      - WORDPRESS_DB_USER=homesite
+      - WORDPRESS_DB_PASSWORD=homesite
+    networks:
+      - wm_net
+
+volumes:
+  db_data:
+  wordpress_data:
+
+networks:
+  wm_net:
+    driver: bridge
