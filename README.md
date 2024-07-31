@@ -10,6 +10,7 @@ These examples demonstrate the setup of individual services using docker compose
 | ------------------------ | ---------------------------------------------------- |
 | [Keycloak](keycloak)     | Standalone Keycloak service for identity management. |
 | [Prometheus](prometheus) | Standalone Prometheus service for monitoring.        |
+| [PostgreSQL](postgres)   | Standalone PostgreSQL service for databases.         |
 
 ## Multi-Service Examples
 
