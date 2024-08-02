@@ -1,0 +1,24 @@
+name: grafana
+
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    environment:
+      - AWS_SDK_LOAD_CONFIG=true
+      - GF_AUTH_SIGV4_AUTH_ENABLED=true
+    volumes:
+      - ./grafana.ini:/etc/grafana/grafana.ini
+      - grafana_data:/var/lib/grafana
+    networks:
+      - grafana_net
+
+volumes:
+  grafana_data:
+
+networks:
+  grafana_net:
+    driver: bridge
