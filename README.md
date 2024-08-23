@@ -6,12 +6,13 @@ Curated list of usage of various tools and services using containers.
 
 These examples demonstrate the setup of individual services using docker compose.
 
-| Services                 | Description                                          |
-| ------------------------ | ---------------------------------------------------- |
-| [Keycloak](keycloak)     | Standalone Keycloak service for identity management. |
-| [Prometheus](prometheus) | Standalone Prometheus service for monitoring.        |
-| [PostgreSQL](postgres)   | Standalone PostgreSQL service for databases.         |
-| [Grafana](grafana)       | Standalone Grafana service for visualization.        |
+| Services                             | Description                                                                             |
+| ------------------------------------ | --------------------------------------------------------------------------------------- |
+| [Keycloak](keycloak)                 | Standalone Keycloak service for identity management.                                    |
+| [Prometheus](prometheus)             | Standalone Prometheus service for monitoring.                                           |
+| [PostgreSQL](postgres)               | Standalone PostgreSQL service for databases.                                            |
+| [PostgreSQL Custom](postgres-custom) | Standalone PostgreSQL service with some customizations and a init script for databases. |
+| [Grafana](grafana)                   | Standalone Grafana service for visualization.                                           |
 
 ## Multi-Service Examples
 
