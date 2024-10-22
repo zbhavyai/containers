@@ -8,6 +8,7 @@ These examples demonstrate the setup of individual services using docker compose
 
 | Services                             | Description                                                                             |
 | ------------------------------------ | --------------------------------------------------------------------------------------- |
+| [Jenkins](jenkins)                   | Standalone Jenkins service for CI/CD.                                                   |
 | [Keycloak](keycloak)                 | Standalone Keycloak service for identity management.                                    |
 | [Prometheus](prometheus)             | Standalone Prometheus service for monitoring.                                           |
 | [PostgreSQL](postgres)               | Standalone PostgreSQL service for databases.                                            |
