@@ -2,14 +2,19 @@ name: jenkins
 
 services:
   jenkins:
-    image: jenkins/jenkins:lts
+    image: jenkins/jenkins:lts-jdk17
     container_name: jenkins
     restart: always
     ports:
       - 8080:8080
       - 50000:50000
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+      - CASC_JENKINS_CONFIG=/var/jenkins_home/casc/jenkins_config.yaml
     volumes:
       - jenkins_home:/var/jenkins_home
+      - ./casc/plugins.txt:/usr/share/jenkins/ref/plugins.txt
+      - ./casc/jenkins_config.yaml:/var/jenkins_home/casc/jenkins_config.yaml
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8080/login || exit 1"]
       interval: 30s
@@ -22,6 +27,9 @@ services:
         limits:
           cpus: "1.0"
           memory: 1G
+    command: >
+      /bin/bash -c
+      "/usr/bin/jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt && exec /usr/local/bin/jenkins.sh"
 
 volumes:
   jenkins_home:
