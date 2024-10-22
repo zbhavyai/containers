@@ -11,3 +11,16 @@ docker compose up --detach
 ```shell
 docker compose down --volumes
 ```
+
+### Printing plugin versions
+
+Go to the [Jenkins Script Console](http://localhost:8080/script) and run the following script
+
+```groovy
+Jenkins.instance.pluginManager.plugins.each{
+  plugin ->
+    println ("${plugin.getDisplayName()} (${plugin.getShortName()}): ${plugin.getVersion()}")
+}
+```
+
+[Reference](https://stackoverflow.com/a/35292719/16018083)
