@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "Automated Jenkins setup using Docker and JCasC"
+  # systemMessage: "Automated Jenkins setup using Docker and JCasC"
   numExecutors: 5
   scmCheckoutRetryCount: 2
   mode: NORMAL
@@ -14,6 +14,34 @@ jenkins:
           password: "developer"
         - id: "viewer"
           password: "viewer"
+
+  nodes:
+    - permanent:
+        mode: NORMAL
+        name: "node-1"
+        labelString: "node-1"
+        remoteFS: "/home/node-1"
+        numExecutors: 2
+        launcher:
+          inbound:
+            workDirSettings:
+              disabled: true
+              failIfWorkDirIsMissing: false
+              internalDir: "remoting"
+              workDirPath: "/tmp"
+    - permanent:
+        mode: NORMAL
+        name: "node-2"
+        labelString: "node-2"
+        remoteFS: "/home/node-2"
+        numExecutors: 2
+        launcher:
+          inbound:
+            workDirSettings:
+              disabled: true
+              failIfWorkDirIsMissing: false
+              internalDir: "remoting"
+              workDirPath: "/tmp"
 
   authorizationStrategy:
     projectMatrix:
