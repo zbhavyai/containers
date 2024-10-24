@@ -95,7 +95,7 @@ jenkins:
         name: "all"
     - list:
         name: "Unit Tests"
-        description: "Unit Tests"
+        # description: "Unit Tests"
         includeRegex: "(?i).*unit.*"
         recurse: true
         columns:
@@ -108,7 +108,7 @@ jenkins:
           - "buildButton"
     - list:
         name: "Integration Tests"
-        description: "Integration Tests"
+        # description: "Integration Tests"
         includeRegex: "(?i).*integration.*"
         recurse: true
         columns:
@@ -121,7 +121,7 @@ jenkins:
           - "buildButton"
     - list:
         name: "Functional Tests"
-        description: "Functional Tests"
+        # description: "Functional Tests"
         includeRegex: "(?i).*functional.*"
         recurse: true
         columns:
@@ -134,7 +134,7 @@ jenkins:
           - "buildButton"
     - list:
         name: "Performance Tests"
-        description: "Performance Tests"
+        # description: "Performance Tests"
         includeRegex: "(?i).*performance.*"
         recurse: true
         columns:
@@ -147,7 +147,7 @@ jenkins:
           - "buildButton"
     - list:
         name: "Security Tests"
-        description: "Security Tests"
+        # description: "Security Tests"
         includeRegex: "(?i).*security.*"
         recurse: true
         columns:
