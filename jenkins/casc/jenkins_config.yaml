@@ -15,6 +15,23 @@ jenkins:
         - id: "viewer"
           password: "viewer"
 
+  authorizationStrategy:
+    projectMatrix:
+      entries:
+        - user:
+            name: admin
+            permissions:
+              - Overall/Administer
+        - user:
+            name: developer
+            permissions:
+              - Overall/Read
+              - Job/Build
+        - user:
+            name: viewer
+            permissions:
+              - Overall/Read
+
   nodes:
     - permanent:
         mode: NORMAL
@@ -43,22 +60,74 @@ jenkins:
               internalDir: "remoting"
               workDirPath: "/tmp"
 
-  authorizationStrategy:
-    projectMatrix:
-      entries:
-        - user:
-            name: admin
-            permissions:
-              - Overall/Administer
-        - user:
-            name: developer
-            permissions:
-              - Overall/Read
-              - Job/Build
-        - user:
-            name: viewer
-            permissions:
-              - Overall/Read
+  views:
+    - all:
+        name: "all"
+    - list:
+        name: "Unit Tests"
+        description: "Unit Tests"
+        includeRegex: "(?i).*unit.*"
+        recurse: true
+        columns:
+          - "status"
+          - "weather"
+          - "jobName"
+          - "lastDuration"
+          - "lastSuccess"
+          - "lastFailure"
+          - "buildButton"
+    - list:
+        name: "Integration Tests"
+        description: "Integration Tests"
+        includeRegex: "(?i).*integration.*"
+        recurse: true
+        columns:
+          - "status"
+          - "weather"
+          - "jobName"
+          - "lastDuration"
+          - "lastSuccess"
+          - "lastFailure"
+          - "buildButton"
+    - list:
+        name: "Functional Tests"
+        description: "Functional Tests"
+        includeRegex: "(?i).*functional.*"
+        recurse: true
+        columns:
+          - "status"
+          - "weather"
+          - "jobName"
+          - "lastDuration"
+          - "lastSuccess"
+          - "lastFailure"
+          - "buildButton"
+    - list:
+        name: "Performance Tests"
+        description: "Performance Tests"
+        includeRegex: "(?i).*performance.*"
+        recurse: true
+        columns:
+          - "status"
+          - "weather"
+          - "jobName"
+          - "lastDuration"
+          - "lastSuccess"
+          - "lastFailure"
+          - "buildButton"
+    - list:
+        name: "Security Tests"
+        description: "Security Tests"
+        includeRegex: "(?i).*security.*"
+        recurse: true
+        columns:
+          - "status"
+          - "weather"
+          - "jobName"
+          - "lastDuration"
+          - "lastSuccess"
+          - "lastFailure"
+          - "buildButton"
 
 unclassified:
   location:
