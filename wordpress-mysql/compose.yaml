@@ -2,7 +2,7 @@ name: wordpress-mysql
 
 services:
   db:
-    image: mysql
+    image: mysql:9.1
     container_name: mysql
     restart: always
     volumes:
@@ -16,7 +16,7 @@ services:
       - wm_net
 
   wordpress:
-    image: wordpress
+    image: wordpress:6.6.2
     container_name: wordpress
     depends_on:
       - db
