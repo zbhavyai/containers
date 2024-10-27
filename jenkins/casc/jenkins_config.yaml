@@ -162,7 +162,7 @@ jenkins:
 unclassified:
   location:
     adminAddress: "admin@jenkins.local"
-    url: http://127.0.0.1:8080/
+    url: http://localhost:8080/
 
 tool:
   git:
