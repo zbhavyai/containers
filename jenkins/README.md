@@ -1,15 +1,21 @@
 ## Jenkins
 
-### Deploy with docker compose
+### Setup
+
+#### Start controller
 
 ```shell
 docker compose up --detach
 ```
 
-### Stop and remove the containers
+#### Start agents
+
+Visit [node-1](http://localhost:8080/computer/node-1/) and [node-2](http://localhost:8080/computer/node-2/) configuration on the Jenkins controller, get the secrets, and run the commands.
 
 ```shell
-docker compose down --volumes
+docker container run --rm --init --detach --network jenkins_jenkins_net --name jenkins-agent-1 jenkins/inbound-agent:jdk17 -url http://jenkins:8080 -secret "<SECRET>" -name "node-1" -workDir "/home/jenkins/agent"
+
+docker container run --rm --init --detach --network jenkins_jenkins_net --name jenkins-agent-2 jenkins/inbound-agent:jdk17 -url http://jenkins:8080 -secret "<SECRET>" -name "node-2" -workDir "/home/jenkins/agent"
 ```
 
 ### Printing plugin versions
@@ -24,3 +30,10 @@ Jenkins.instance.pluginManager.plugins.each{
 ```
 
 [Reference](https://stackoverflow.com/a/35292719/16018083)
+
+### Teardown
+
+```shell
+docker container stop jenkins-agent-1 jenkins-agent-2
+docker compose down --volumes
+```
