@@ -1,12 +1,12 @@
 ## Prometheus and Grafana
 
-### Deploy with docker compose
+### Setup
 
 ```shell
 docker compose up --detach
 ```
 
-### Stop and remove the containers
+### Teardown
 
 ```shell
 docker compose down --volumes
