@@ -31,6 +31,34 @@ services:
       /bin/bash -c
       "/usr/bin/jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt && exec /usr/local/bin/jenkins.sh"
 
+  # agent1:
+  #   image: jenkins/inbound-agent:jdk17
+  #   container_name: jenkins-agent-1
+  #   restart: always
+  #   environment:
+  #     - JENKINS_URL=http://jenkins:8080
+  #     - JENKINS_AGENT_NAME=node-1
+  #     - JENKINS_AGENT_WORKDIR=/home/jenkins/agent
+  #     - JENKINS_SECRET=node-1-secret
+  #   depends_on:
+  #     - jenkins
+  #   networks:
+  #     - jenkins_net
+
+  # agent2:
+  #   image: jenkins/inbound-agent:jdk17
+  #   container_name: jenkins-agent-2
+  #   restart: always
+  #   environment:
+  #     - JENKINS_URL=http://jenkins:8080
+  #     - JENKINS_AGENT_NAME=node-2
+  #     - JENKINS_AGENT_WORKDIR=/home/jenkins/agent
+  #     - JENKINS_SECRET=node-1-secret
+  #   depends_on:
+  #     - jenkins
+  #   networks:
+  #     - jenkins_net
+
 volumes:
   jenkins_home:
 

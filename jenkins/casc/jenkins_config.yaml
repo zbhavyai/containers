@@ -1,6 +1,6 @@
 jenkins:
   # systemMessage: "Automated Jenkins setup using Docker and JCasC"
-  numExecutors: 5
+  numExecutors: 0
   scmCheckoutRetryCount: 2
   mode: NORMAL
 
@@ -67,28 +67,26 @@ jenkins:
         mode: NORMAL
         name: "node-1"
         labelString: "node-1"
-        remoteFS: "/home/node-1"
+        remoteFS: "/home/jenkins/agent"
         numExecutors: 2
         launcher:
           inbound:
             workDirSettings:
-              disabled: true
+              disabled: false
               failIfWorkDirIsMissing: false
               internalDir: "remoting"
-              workDirPath: "/tmp"
     - permanent:
         mode: NORMAL
         name: "node-2"
         labelString: "node-2"
-        remoteFS: "/home/node-2"
+        remoteFS: "/home/jenkins/agent"
         numExecutors: 2
         launcher:
           inbound:
             workDirSettings:
-              disabled: true
+              disabled: false
               failIfWorkDirIsMissing: false
               internalDir: "remoting"
-              workDirPath: "/tmp"
 
   views:
     - all:
