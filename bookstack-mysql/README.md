@@ -1,0 +1,13 @@
+## BookStack and MySQL
+
+### Setup
+
+```shell
+docker compose up --detach
+```
+
+### Teardown
+
+```shell
+docker compose down --volumes
+```

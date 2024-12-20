@@ -24,6 +24,7 @@ These examples demonstrate the setup of multiple integrated services using docke
 | [Prometheus / Grafana](prometheus-grafana)                     | Integration of `Prometheus` and `Grafana`. `Grafana` is pre-configured to use `Prometheus` as an uneditable datasource.                                                                                                           |
 | [Prometheus / Grafana / Keycloak](prometheus-grafana-keycloak) | Integration of `Prometheus`, `Grafana`, and `Keycloak`. `Grafana` is configured with OIDC authentication via `Keycloak`, granting all authenticated users the `Viewer` role, and `Prometheus` is set as an uneditable datasource. |
 | [Wordpress / MySQL](wordpress-mysql)                           | Integration of `Wordpress` and `MySQL`.                                                                                                                                                                                           |
+| [BookStack / MySQL](bookstack-mysql)                           | Integration of `BookStack` and `MySQL`.                                                                                                                                                                                           |
 
 ## Tools
 
