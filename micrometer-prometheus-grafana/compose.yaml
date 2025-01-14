@@ -4,8 +4,8 @@ services:
   micrometer:
     build:
       context: ./micrometer
-    ports:
-      - "3005:3005"
+    # ports:
+    #   - 3005:3005
     restart: always
     networks:
       - mpg_net
@@ -15,8 +15,8 @@ services:
     container_name: prometheus
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
-    ports:
-      - 9090:9090
+    # ports:
+    #   - 9090:9090
     restart: unless-stopped
     volumes:
       - ./prometheus/:/etc/prometheus/
