@@ -2,7 +2,7 @@
 
 Micrometer is a vendor-neutral application metrics facade. This example demonstrates how to collect metrics from a Java (Quarkus) application using Micrometer, store them in Prometheus, and visualize them with Grafana.
 
-The Grafana dashboard used in this example is slightly modified version of [JVM Micrometer](https://grafana.com/grafana/dashboards/4701) dashboard. The Prometheus data source is pre-configured in the dashboard. They both are [provisioned](https://grafana.com/tutorials/provision-dashboards-and-data-sources/).
+Grafana is [provisioned](https://grafana.com/tutorials/provision-dashboards-and-data-sources/) with Prometheus datasource and a slightly modified [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701-jvm-micrometer/) dashboard.
 
 ## Launching
 
