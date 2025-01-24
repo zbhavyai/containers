@@ -31,7 +31,7 @@ services:
       - keycloak
 
   keycloak:
-    image: keycloak/keycloak:26.0
+    image: keycloak/keycloak:25.0
     container_name: keycloak
     command:
       - start-dev
