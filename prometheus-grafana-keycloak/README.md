@@ -1,6 +1,6 @@
 # Prometheus, Grafana, and Keycloak
 
-A demonstration of integrating Grafana with Keycloak for authentication and authorization.
+A demonstration of integrating Grafana with Keycloak for authentication and authorization. Grafana is also [provisioned](https://grafana.com/tutorials/provision-dashboards-and-data-sources/) with Prometheus datasource.
 
 The Grafana is configured to use Keycloak as an OIDC provider; and for easy API access, a local `apiadmin` user can be used.
 

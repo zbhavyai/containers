@@ -1,12 +1,25 @@
-## Prometheus and Grafana
+# Prometheus and Grafana
 
-### Setup
+Grafana is [provisioned](https://grafana.com/tutorials/provision-dashboards-and-data-sources/) with Prometheus datasource.
+
+## Launching
+
+To start the Prometheus and Grafana containers, run
 
 ```shell
 docker compose up --detach
 ```
 
-### Teardown
+## Accessing
+
+Once the container is running, you can access Grafana at [http://localhost:3000](http://localhost:3000), using
+
+- Username: `admin`
+- Password: `admin`
+
+## Teardown
+
+To stop and remove the containers, run
 
 ```shell
 docker compose down --volumes
