@@ -1,8 +1,8 @@
-## TexLive
+# TexLive
 
 Use texlive to generate PDFs from LaTeX files.
 
-### Build the image
+## Build the image
 
 ```shell
 docker build --tag latex .
@@ -14,7 +14,7 @@ Or using `podman`
 podman build --tag latex .
 ```
 
-### Generate the PDF
+## Generate the PDF
 
 1. Add this alias to `~/.bashrc`
 
