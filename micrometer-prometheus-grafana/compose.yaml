@@ -1,9 +1,10 @@
-name: prometheus-grafana
+name: micrometer-prometheus-grafana
 
 services:
   micrometer:
     build:
       context: ./micrometer
+    container_name: micrometer
     # ports:
     #   - 3005:3005
     restart: always
