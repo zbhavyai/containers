@@ -4,6 +4,7 @@ services:
   micrometer:
     build:
       context: ./micrometer
+    image: micrometer:1.0.0
     container_name: micrometer
     # ports:
     #   - 3005:3005
