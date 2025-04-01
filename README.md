@@ -14,6 +14,7 @@ These examples demonstrate the setup of individual services using docker compose
 | [PostgreSQL](postgres)               | Standalone PostgreSQL service for databases.                                            |
 | [PostgreSQL Custom](postgres-custom) | Standalone PostgreSQL service with some customizations and a init script for databases. |
 | [Grafana](grafana)                   | Standalone Grafana service for visualization.                                           |
+| [Windows](windows)                   | Windows on docker                                                                       |
 
 ## Multi-Service Examples
 

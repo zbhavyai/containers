@@ -40,3 +40,6 @@ nb-configuration.xml
 
 # tls certificates
 .certs/
+
+# miscellaneous
+windows/windows
