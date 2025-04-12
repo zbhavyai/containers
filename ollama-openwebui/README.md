@@ -22,11 +22,11 @@ Check if Ollama is up and running
 curl --request GET --location http://localhost:11434
 ```
 
-Pull the model `tinyllama`
+Pull the model `deepseek-r1`
 
 ```shell
 curl --request POST --location http://localhost:11434/api/pull -d '{
-  "model": "tinyllama"
+  "model": "deepseek-r1"
 }'
 ```
 
@@ -34,7 +34,7 @@ Sending a prompt to the model
 
 ```shell
 curl --silent --request POST --location http://localhost:11434/api/generate --data '{
-  "model": "tinyllama",
+  "model": "deepseek-r1",
   "stream": false,
   "prompt": "Why is the sky blue?"
 }' | jq --compact-output
