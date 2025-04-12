@@ -4,7 +4,7 @@ services:
   db:
     image: mysql:9.1
     container_name: mysql
-    restart: always
+    restart: unless-stopped
     volumes:
       - db_data:/var/lib/mysql
     environment:
@@ -20,7 +20,7 @@ services:
     container_name: bookstack
     depends_on:
       - db
-    restart: always
+    restart: unless-stopped
     ports:
       - 6875:80
     environment:

@@ -6,7 +6,7 @@ services:
     container_name: grafana
     ports:
       - 3000:3000
-    restart: unless-stopped
+    restart: always
     environment:
       - AWS_SDK_LOAD_CONFIG=true
       - GF_AUTH_SIGV4_AUTH_ENABLED=true
