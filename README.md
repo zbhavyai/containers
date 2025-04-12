@@ -27,6 +27,7 @@ These examples demonstrate the setup of multiple integrated services using docke
 | [Micrometer / Prometheus / Grafana](micrometer-prometheus-grafana) | Integration of a java app exposing default metrics using [Micrometer](https://micrometer.io/), `Prometheus`, and `Grafana`. `Grafana` is provisioned with `Prometheus` datasource and a slightly modified [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701-jvm-micrometer/) dashboard. |
 | [Wordpress / MySQL](wordpress-mysql)                               | Integration of `Wordpress` and `MySQL`.                                                                                                                                                                                                                                                              |
 | [BookStack / MySQL](bookstack-mysql)                               | Integration of `BookStack` and `MySQL`.                                                                                                                                                                                                                                                              |
+| [Ollama / Open WebUI](ollama-openwebui)                            | Integration of `Ollama` and `Open WebUI`. Ollama for running large language models and Open WebUI for having chat like interface.                                                                                                                                                                    |
 
 ## Tools
 
