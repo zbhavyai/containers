@@ -9,6 +9,13 @@ services:
     restart: unless-stopped
     volumes:
       - ollama:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
@@ -22,13 +29,6 @@ services:
       - ollama
     volumes:
       - open-webui:/app/backend/data
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - driver: nvidia
-    #           count: all
-    #           capabilities: [gpu]
 
 volumes:
   ollama:
