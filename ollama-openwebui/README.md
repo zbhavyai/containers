@@ -6,6 +6,8 @@ I could have used the Open WebUI image that is bundled ollama support, `ghcr.io/
 
 ## Launching
 
+Make sure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) is installed and configured.
+
 To start the Ollama and Open WebUI containers, run
 
 ```shell
