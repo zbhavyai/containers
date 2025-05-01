@@ -14,7 +14,7 @@ docker compose up --build --detach
 
 ## Accessing
 
-Once containers are up, access the JVM (Micrometer) dashboard at [http://localhost:3000/d/jvm-micrometer/jvm-micrometer?orgId=1&refresh=30s&from=now-5m&to=now&kiosk](http://localhost:3000/d/jvm-micrometer/jvm-micrometer?orgId=1&refresh=30s&from=now-5m&to=now&kiosk). There is no need to log in, since anonymous access is enabled.
+Once containers are up, access the JVM (Micrometer) dashboard at [http://localhost:3007/d/jvm-micrometer/jvm-micrometer?orgId=1&refresh=30s&from=now-5m&to=now&kiosk](http://localhost:3007/d/jvm-micrometer/jvm-micrometer?orgId=1&refresh=30s&from=now-5m&to=now&kiosk). There is no need to log in, since anonymous access is enabled.
 
 ## Teardown
 
