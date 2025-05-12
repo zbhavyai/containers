@@ -15,6 +15,7 @@ These examples demonstrate the setup of individual services using docker compose
 | [PostgreSQL Custom](postgres-custom) | Standalone PostgreSQL service with some customizations and a init script for databases. |
 | [Grafana](grafana)                   | Standalone Grafana service for visualization.                                           |
 | [Windows](windows)                   | Windows on docker                                                                       |
+| [Open WebUI](openwebui)              | Standalone Open WebUI for connecting to remote Ollama                                   |
 
 ## Multi-Service Examples
 
