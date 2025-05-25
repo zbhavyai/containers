@@ -2,7 +2,7 @@ name: postgres
 
 services:
   db:
-    image: postgres:17.0
+    image: postgres:17
     container_name: postgres
     restart: always
     shm_size: 128mb
