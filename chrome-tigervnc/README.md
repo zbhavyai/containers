@@ -12,7 +12,7 @@ docker compose up --detach
 
 ## Accessing
 
-Once the container is running, use any VNC client, like Remmina, on the host machine to connect to the URL 127.0.0.1:6100. There is no password set.
+Once the container is running, use any VNC client, like Remmina, on the host machine to connect to the URL `vnc://127.0.0.1:6100`. There is no password set.
 
 ## Teardown
 
