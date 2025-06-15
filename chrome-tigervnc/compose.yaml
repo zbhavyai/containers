@@ -1,0 +1,20 @@
+name: chrome-tigervnc
+
+services:
+  chrome-vnc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: chrome-tigervnc:1.0.0
+    container_name: chrome-tigervnc
+    ports:
+      - 6100:6100
+    restart: unless-stopped
+    environment:
+      - DISPLAY=:200
+      - RESOLUTION=1920x1080
+    volumes:
+      - chrome-data:/home/chromeuser/.config/google-chrome
+
+volumes:
+  chrome-data:
