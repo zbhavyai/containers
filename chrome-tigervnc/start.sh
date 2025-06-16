@@ -11,7 +11,7 @@ sleep 3
 
 # start openbox
 echo "[INFO] Starting Openbox"
-openbox-session &
+DISPLAY=${DISPLAY} openbox-session &
 PID_OPENBOX=$!
 
 # launch Chrome in a respawn loop
