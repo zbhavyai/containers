@@ -19,14 +19,17 @@ podman build --tag latex .
 1. Add this alias to `~/.bashrc`
 
    ```shell
-   alias latex='docker container run --rm --volume "${PWD}:/data" --name latex latex'
+   alias latex='docker container run --rm --volume "${PWD}:/data" --user $(id --user):$(id --group) localhost/latex'
    ```
 
    Or using `podman`
 
    ```shell
-   alias latex='podman container run --privileged --rm --volume "${PWD}:/data" --name latex latex'
-   alias latex='podman container run --rm --volume "${PWD}:/data:Z" --name latex latex'
+   alias latex='podman container run --privileged --rm --volume "${PWD}:/data" localhost/latex'
+
+   # OR
+
+   alias latex='podman container run --rm --volume "${PWD}:/data:Z" localhost/latex'
    ```
 
 2. Navigate to the directory containing the `.tex` file and run
@@ -36,4 +39,4 @@ podman build --tag latex .
    ```
 
 > [!TIP]
-> Using `podman` helps in avoiding the owner as root for the generated PDF files. However, it requires the `--privileged` flag to [disable SELinux host isolation](https://stackoverflow.com/a/64556930).
+> Using `podman` requires the `--privileged` flag to [disable SELinux host isolation](https://stackoverflow.com/a/64556930).
