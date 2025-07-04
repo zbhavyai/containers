@@ -5,13 +5,13 @@ Use texlive to generate PDFs from LaTeX files.
 ## Build the image
 
 ```shell
-docker build --tag latex .
+docker image build --file ./Dockerfile --tag latex .
 ```
 
 Or using `podman`
 
 ```shell
-podman build --tag latex .
+podman image build --file ./Dockerfile --tag latex .
 ```
 
 ## Generate the PDF
