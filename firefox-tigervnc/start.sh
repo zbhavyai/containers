@@ -14,18 +14,14 @@ echo "[INFO] Starting Openbox"
 DISPLAY=${DISPLAY} openbox-session &
 PID_OPENBOX=$!
 
-# launch Chrome in a respawn loop
+# launch Firefox in a respawn loop
 while true; do
-    echo "[INFO] Launching Chrome"
-    DISPLAY=${DISPLAY} google-chrome \
-        --disable-gpu \
-        --disable-software-rasterizer \
-        --disable-dev-shm-usage \
-        --disable-features=VizDisplayCompositor \
-        --disable-smooth-scrolling \
-        --start-maximized \
+    echo "[INFO] Launching Firefox"
+    DISPLAY=${DISPLAY} firefox \
+        --width=1920 \
+        --height=1080 \
         &>/dev/null
-    echo "[WARN] Chrome exited. Restarting in 1 seconds..."
+    echo "[WARN] Firefox exited. Restarting in 1 seconds..."
     sleep 1
 done &
 
