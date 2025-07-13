@@ -10,13 +10,15 @@ podman image build --file ./Dockerfile --tag latex .
 
 ## Generate the PDF
 
-1. Add this alias to `~/.bashrc`
+1. Add this alias to `~/.bashrc`. Note the use of `--privileged` or `:Z` to [disable SELinux host isolation](https://stackoverflow.com/a/64556930).
 
    ```shell
    alias latex='podman container run --privileged --rm --volume "${PWD}:/data" localhost/latex'
+   ```
 
-   # OR
+   OR
 
+   ```shell
    alias latex='podman container run --rm --volume "${PWD}:/data:Z" localhost/latex'
    ```
 
@@ -25,6 +27,3 @@ podman image build --file ./Dockerfile --tag latex .
    ```shell
    latex filename.tex
    ```
-
-> [!TIP]
-> Using `podman` requires the `--privileged` flag to [disable SELinux host isolation](https://stackoverflow.com/a/64556930).
