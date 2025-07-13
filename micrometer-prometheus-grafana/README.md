@@ -9,7 +9,7 @@ Grafana is [provisioned](https://grafana.com/tutorials/provision-dashboards-and-
 To start the Micrometer application, Prometheus, and Grafana containers, run
 
 ```shell
-docker compose up --build --detach
+podman compose up --build --detach
 ```
 
 ## Accessing
@@ -21,5 +21,5 @@ Once containers are up, access the JVM (Micrometer) dashboard at [http://localho
 To stop and remove the containers, run
 
 ```shell
-docker compose down --volumes
+podman compose down --volumes
 ```

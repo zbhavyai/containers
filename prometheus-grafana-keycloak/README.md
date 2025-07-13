@@ -9,7 +9,7 @@ The Grafana is configured to use Keycloak as an OIDC provider; and for easy API 
 To start the Prometheus, Grafana, and Keycloak containers, run
 
 ```shell
-docker compose up --detach
+podman compose up --detach
 ```
 
 ## Accessing
@@ -43,5 +43,5 @@ curl --silent --request POST --header 'Accept: application/json'--header  --loca
 To stop and remove the containers, run
 
 ```shell
-docker compose down --volumes
+podman compose down --volumes
 ```

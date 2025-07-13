@@ -11,7 +11,7 @@ Make sure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-na
 To start the Ollama and Open WebUI containers, run
 
 ```shell
-docker compose up --detach
+podman compose up --detach
 ```
 
 ## Accessing
@@ -47,5 +47,5 @@ curl --silent --request POST --location http://localhost:11434/api/generate --da
 To stop and remove the containers, run
 
 ```shell
-docker compose down --volumes
+podman compose down --volumes
 ```

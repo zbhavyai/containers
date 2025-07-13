@@ -7,7 +7,7 @@ BookStack is a simple, self-hosted, easy-to-use platform for organizing and stor
 To start the BookStack and MySQL containers, run
 
 ```shell
-docker compose up --detach
+podman compose up --detach
 ```
 
 ## Accessing
@@ -22,5 +22,5 @@ Once the containers are running, you can access BookStack at [http://localhost:6
 To stop and remove the containers, run
 
 ```shell
-docker compose down --volumes
+podman compose down --volumes
 ```

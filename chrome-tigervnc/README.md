@@ -7,7 +7,7 @@ Run Google Chrome on a X session created by TigerVNC server and access it using 
 To build and start the container, run
 
 ```shell
-docker compose up --detach
+podman compose up --detach
 ```
 
 ## Accessing
@@ -19,5 +19,5 @@ Once the container is running, use any VNC client, like Remmina, on the host mac
 To stop and remove the containers, run
 
 ```shell
-docker compose down --volumes
+podman compose down --volumes
 ```

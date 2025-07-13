@@ -7,7 +7,7 @@ Keycloak is an open-source Identity and Access Management solution aimed at mode
 To start the Keycloak container, run
 
 ```shell
-docker compose up --detach
+podman compose up --detach
 ```
 
 ## Accessing
@@ -22,5 +22,5 @@ Once the container is running, you can access Keycloak at [http://localhost:8080
 To stop and remove the containers, run
 
 ```shell
-docker compose down --volumes
+podman compose down --volumes
 ```

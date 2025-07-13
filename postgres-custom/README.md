@@ -7,7 +7,7 @@ PostgreSQL is open-source relational database. This PostgreSQL container uses cu
 To start the Postgres container, run
 
 ```shell
-docker compose up --detach
+podman compose up --detach
 ```
 
 ## Accessing
@@ -23,5 +23,5 @@ PGPASSWORD=postgres psql -h localhost -U postgres -d mydatabase
 To stop and remove the containers, run
 
 ```shell
-docker compose down --volumes
+podman compose down --volumes
 ```

@@ -7,7 +7,7 @@ Grafana is [provisioned](https://grafana.com/tutorials/provision-dashboards-and-
 To start the Prometheus and Grafana containers, run
 
 ```shell
-docker compose up --detach
+podman compose up --detach
 ```
 
 ## Accessing
@@ -22,5 +22,5 @@ Once the container is running, you can access Grafana at [http://localhost:3000]
 To stop and remove the containers, run
 
 ```shell
-docker compose down --volumes
+podman compose down --volumes
 ```

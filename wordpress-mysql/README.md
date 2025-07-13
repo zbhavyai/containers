@@ -7,7 +7,7 @@ WordPress is a popular content management system.
 To start the WordPress and MySQL containers, run:
 
 ```shell
-docker compose up --detach
+podman compose up --detach
 ```
 
 ## Accessing
@@ -19,5 +19,5 @@ Once the container is running, WordPress is available at [http://localhost:80](h
 To stop and remove the containers, run
 
 ```shell
-docker compose down --volumes
+podman compose down --volumes
 ```

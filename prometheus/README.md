@@ -7,7 +7,7 @@ Prometheus is a monitoring and alerting toolkit.
 To start the Prometheus server, run
 
 ```shell
-docker compose up --detach
+podman compose up --detach
 ```
 
 ## Accessing
@@ -19,5 +19,5 @@ Prometheus is available at [http://localhost:9090](http://localhost:9090).
 To stop and remove the containers, run
 
 ```shell
-docker compose down --volumes
+podman compose down --volumes
 ```
