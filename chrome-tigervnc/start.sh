@@ -3,7 +3,7 @@ set -euo pipefail
 
 # start Xvnc server
 echo "[INFO] Starting Xvnc server"
-Xvnc ${DISPLAY} -SecurityTypes None -geometry ${RESOLUTION} -depth 24 &
+Xvnc -quiet ${DISPLAY} -SecurityTypes None -geometry ${RESOLUTION} -depth 24 &>/dev/null &
 PID_XVNC=$!
 
 # wait for Xvnc to start
