@@ -7,6 +7,8 @@ RUN useradd -m chromeuser
 RUN curl --silent --show-error --location --output /tmp/chrome.rpm https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
     dnf install --assumeyes /tmp/chrome.rpm && \
     rm --force /tmp/chrome.rpm
+RUN mkdir -p /tmp/.X11-unix
+RUN chmod 1777 /tmp/.X11-unix
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 USER chromeuser

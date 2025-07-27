@@ -5,6 +5,8 @@ RUN dnf install --assumeyes epel-release
 RUN dnf install --assumeyes tigervnc-server-minimal openbox passwd shadow-utils
 RUN useradd -m firefoxuser
 RUN dnf install --assumeyes firefox
+RUN mkdir -p /tmp/.X11-unix
+RUN chmod 1777 /tmp/.X11-unix
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 USER firefoxuser
