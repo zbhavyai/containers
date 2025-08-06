@@ -2,6 +2,8 @@
 
 Curated list of usage of various tools and services using containers.
 
+[![License](https://img.shields.io/github/license/zbhavyai/containers?label=License)](https://github.com/zbhavyai/containers/blob/main/LICENSE)
+
 > [!NOTE]
 > All the examples provided below have been developed and tested to work well on a Fedora Workstation using Podman.
 
