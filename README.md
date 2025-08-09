@@ -2,6 +2,7 @@
 
 Curated list of usage of various tools and services using containers.
 
+[![Lint](https://img.shields.io/github/actions/workflow/status/zbhavyai/containers/lint.yml?label=Lint)](https://github.com/zbhavyai/containers/actions/workflows/lint.yml)
 [![License](https://img.shields.io/github/license/zbhavyai/containers?label=License)](https://github.com/zbhavyai/containers/blob/main/LICENSE)
 
 > [!IMPORTANT]
