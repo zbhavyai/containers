@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: chrome-tigervnc:1.0.0
+    image: localhost/chrome-tigervnc:1.0.0
     container_name: chrome-tigervnc
     ports:
       - 6100:6100

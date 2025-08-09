@@ -2,7 +2,7 @@ name: bookstack-mysql
 
 services:
   db:
-    image: mysql:9.1
+    image: docker.io/library/mysql:9.1
     container_name: mysql
     restart: unless-stopped
     volumes:
@@ -16,7 +16,7 @@ services:
       - bm_net
 
   bookstack:
-    image: linuxserver/bookstack:24.10.3
+    image: docker.io/linuxserver/bookstack:24.10.3
     container_name: bookstack
     depends_on:
       - db

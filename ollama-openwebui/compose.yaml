@@ -2,7 +2,7 @@ name: ollama-openwebui
 
 services:
   ollama:
-    image: ollama/ollama:0.7.1
+    image: docker.io/ollama/ollama:0.7.1
     container_name: ollama
     ports:
       - 11434:11434

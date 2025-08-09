@@ -4,7 +4,7 @@ services:
   micrometer:
     build:
       context: ./micrometer
-    image: micrometer:1.0.0
+    image: localhost/micrometer:1.0.0
     container_name: micrometer
     # ports:
     #   - 3005:3005
@@ -13,7 +13,7 @@ services:
       - mpg_net
 
   prometheus:
-    image: prom/prometheus:v2.55.0
+    image: docker.io/prom/prometheus:v2.55.0
     container_name: prometheus
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
@@ -27,7 +27,7 @@ services:
       - mpg_net
 
   grafana:
-    image: grafana/grafana:7.5.15
+    image: docker.io/grafana/grafana:7.5.15
     container_name: grafana
     environment:
       - GF_SERVER_HTTP_PORT=3007

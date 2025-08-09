@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: firefox-tigervnc:1.0.0
+    image: localhost/firefox-tigervnc:1.0.0
     container_name: firefox-tigervnc
     ports:
       - 6100:6100

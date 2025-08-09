@@ -1,4 +1,4 @@
-FROM texlive/texlive:latest
+FROM docker.io/texlive/texlive:latest
 LABEL maintainer="https://zbhavyai.github.io"
 LABEL repo="https://github.com/zbhavyai/containers"
 RUN tlmgr update --self && tlmgr install latexmk

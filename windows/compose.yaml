@@ -2,7 +2,7 @@ name: windows
 
 services:
   windows:
-    image: dockurr/windows:4.35
+    image: docker.io/dockurr/windows:4.35
     container_name: windows7
     environment:
       VERSION: "7e"

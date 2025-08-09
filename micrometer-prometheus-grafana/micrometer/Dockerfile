@@ -1,5 +1,5 @@
 # Build Stage
-FROM eclipse-temurin:17-jdk AS build
+FROM docker.io/library/eclipse-temurin:17-jdk AS build
 LABEL maintainer="https://zbhavyai.github.io"
 LABEL repo="https://github.com/zbhavyai/containers"
 WORKDIR /opt/app
@@ -10,7 +10,7 @@ COPY src src
 RUN ./mvnw package
 
 # Runtime Stage
-FROM eclipse-temurin:17-jre
+FROM docker.io/library/eclipse-temurin:17-jre
 LABEL maintainer="https://zbhavyai.github.io"
 LABEL repo="https://github.com/zbhavyai/containers"
 WORKDIR /opt/app
