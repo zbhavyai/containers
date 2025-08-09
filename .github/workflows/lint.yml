@@ -1,0 +1,72 @@
+name: Lint
+
+on:
+  push:
+    paths:
+      - "**.yaml"
+      - "**.yml"
+      - "**.sh"
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compose-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Lint compose files
+        run: |
+          globalStatus=0
+
+          for f in $(find . -name "*compose*.y*ml"); do
+            docker compose --file "$f" config --quiet
+            currentStatus=$?
+            echo "Status=${currentStatus} for file $f"
+
+            if [ $currentStatus -ne 0 ]; then
+              globalStatus=$currentStatus
+            fi
+          done
+
+          exit $globalStatus
+
+  shell-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install shellcheck
+        run: pip install --upgrade pip shellcheck-py
+
+      - name: Lint shell scripts
+        run: |
+          globalStatus=0
+
+          for f in $(find . -name "*.sh"); do
+            shellcheck "$f"
+            currentStatus=$?
+            echo "Status=${currentStatus} for file $f"
+
+            if [ $currentStatus -ne 0 ]; then
+              globalStatus=$currentStatus
+            fi
+          done
+
+          exit $globalStatus
