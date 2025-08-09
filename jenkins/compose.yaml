@@ -2,7 +2,7 @@ name: jenkins
 
 services:
   jenkins:
-    image: jenkins/jenkins:lts-jdk17
+    image: jenkins/jenkins:lts-jdk21
     container_name: jenkins
     restart: always
     ports:
@@ -31,7 +31,7 @@ services:
       "/usr/bin/jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt && exec /usr/local/bin/jenkins.sh"
 
   # agent1:
-  #   image: jenkins/inbound-agent:jdk17
+  #   image: jenkins/inbound-agent:jdk21
   #   container_name: jenkins-agent-1
   #   restart: always
   #   environment:
@@ -45,7 +45,7 @@ services:
   #     - jenkins_net
 
   # agent2:
-  #   image: jenkins/inbound-agent:jdk17
+  #   image: jenkins/inbound-agent:jdk21
   #   container_name: jenkins-agent-2
   #   restart: always
   #   environment:
