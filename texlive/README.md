@@ -5,7 +5,7 @@ Use texlive to generate PDFs from LaTeX files.
 ## Build the image
 
 ```shell
-podman image build --file ./Dockerfile --tag latex .
+podman image build --file ./Dockerfile --tag localhost/latex .
 ```
 
 ## Generate the PDF
@@ -21,6 +21,10 @@ podman image build --file ./Dockerfile --tag latex .
    ```shell
    alias latex='podman container run --rm --volume "${PWD}:/data:Z" localhost/latex'
    ```
+
+   > NOTE
+   >
+   > If using `docker`, add the flag `--user $(id --user):$(id --group)` to the command to ensure file permissions are set correctly.
 
 2. Navigate to the directory containing the `.tex` file and run
 
