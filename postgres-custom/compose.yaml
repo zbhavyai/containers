@@ -14,9 +14,9 @@ services:
       - 5432:5432
     volumes:
       - db_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ./postgresql.conf:/etc/postgresql/postgresql.conf
-      - ./pg_hba.conf:/etc/postgresql/pg_hba.conf
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro,Z
+      - ./postgresql.conf:/etc/postgresql/postgresql.conf:ro,Z
+      - ./pg_hba.conf:/etc/postgresql/pg_hba.conf:ro,Z
     healthcheck:
       test: ["CMD-SHELL", "pg_isready"]
       interval: 30s

@@ -4,8 +4,11 @@ Curated list of usage of various tools and services using containers.
 
 [![License](https://img.shields.io/github/license/zbhavyai/containers?label=License)](https://github.com/zbhavyai/containers/blob/main/LICENSE)
 
-> [!NOTE]
-> All the examples provided below have been developed and tested to work well on a Fedora Workstation using Podman.
+> [!IMPORTANT]
+> You'll notice `compose.yaml` uses `:ro,Z` on certain volume mounts.
+>
+> - `:ro` makes the mount read-only. Its optional, but protects host config from edits.
+> - `:Z` is required on Fedora and other SELinux-enforcing systems when bind-mounting host files or directories so the container can access them. This is usually not needed on Ubuntu, which use AppArmor instead of SELinux.
 
 ## Single Service Examples
 

@@ -10,7 +10,7 @@ services:
       - 9090:9090
     restart: unless-stopped
     volumes:
-      - ./prometheus/:/etc/prometheus/
+      - ./prometheus/:/etc/prometheus/:ro,Z
       - prom_data:/prometheus
     networks:
       - pg_net
@@ -25,8 +25,8 @@ services:
       - AWS_SDK_LOAD_CONFIG=true
       - GF_AUTH_SIGV4_AUTH_ENABLED=true
     volumes:
-      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro,Z
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini:ro,Z
       - grafana_data:/var/lib/grafana
     networks:
       - pg_net

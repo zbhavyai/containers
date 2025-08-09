@@ -12,8 +12,8 @@ services:
       - CASC_JENKINS_CONFIG=/var/jenkins_home/casc/jenkins_config.yaml
     volumes:
       - jenkins_home:/var/jenkins_home
-      - ./casc/plugins.txt:/usr/share/jenkins/ref/plugins.txt
-      - ./casc/jenkins_config.yaml:/var/jenkins_home/casc/jenkins_config.yaml
+      - ./casc/plugins.txt:/usr/share/jenkins/ref/plugins.txt:ro,Z
+      - ./casc/jenkins_config.yaml:/var/jenkins_home/casc/jenkins_config.yaml:ro,Z
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8080/login || exit 1"]
       interval: 30s

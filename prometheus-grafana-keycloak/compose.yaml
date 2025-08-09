@@ -10,7 +10,7 @@ services:
       - 9090:9090
     restart: unless-stopped
     volumes:
-      - ./prometheus/:/etc/prometheus/
+      - ./prometheus/:/etc/prometheus/:ro,Z
       - prom_data:/prometheus
     networks:
       - pgk_net
@@ -22,8 +22,8 @@ services:
       - 3000:3000
     restart: unless-stopped
     volumes:
-      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro,Z
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini:ro,Z
       - grafana_data:/var/lib/grafana
     networks:
       - pgk_net
@@ -41,7 +41,7 @@ services:
     restart: unless-stopped
     volumes:
       - keycloak_data:/opt/keycloak/data
-      - ./keycloak/my-realm.json:/opt/keycloak/data/import/my-realm.json:ro
+      - ./keycloak/my-realm.json:/opt/keycloak/data/import/my-realm.json:ro,Z
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
