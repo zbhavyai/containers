@@ -7,7 +7,7 @@ Run Mozilla Firefox on a X session created by TigerVNC server and access it usin
 To build and start the container, run
 
 ```shell
-podman compose up --detach
+podman compose up --build --detach
 ```
 
 ## Accessing
