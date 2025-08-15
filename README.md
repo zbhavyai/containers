@@ -11,38 +11,44 @@ Curated list of usage of various tools and services using containers.
 > - `:ro` makes the mount read-only. Its optional, but protects host config from edits.
 > - `:Z` is required on Fedora and other SELinux-enforcing systems when bind-mounting host files or directories so the container can access them. This is usually not needed on Ubuntu, which use AppArmor instead of SELinux.
 
-## Single Service Examples
+## CI/CD & Developer Tools
 
-These examples demonstrate the setup of individual services using docker compose.
+| Services                            | Description                                                                       |
+| ----------------------------------- | --------------------------------------------------------------------------------- |
+| [Jenkins](jenkins)                  | Build, test, and deploy applications automatically with powerful CI/CD pipelines. |
+| [TeX Live](texlive)                 | Compile LaTeX documents into PDFs using a containerized TeX Live environment.     |
+| [Google Chrome](chrome-tigervnc)    | Browse the web via Chrome in a TigerVNC desktop session with Openbox.             |
+| [Mozilla Firefox](firefox-tigervnc) | Browse the web via Firefox in a TigerVNC desktop session with Openbox.            |
+| [Windows](windows)                  | Run a full Windows environment inside Docker for testing or legacy software.      |
 
-| Services                             | Description                                                                             |
-| ------------------------------------ | --------------------------------------------------------------------------------------- |
-| [Jenkins](jenkins)                   | Standalone Jenkins service for CI/CD.                                                   |
-| [Keycloak](keycloak)                 | Standalone Keycloak service for identity management.                                    |
-| [Prometheus](prometheus)             | Standalone Prometheus service for monitoring.                                           |
-| [PostgreSQL](postgres)               | Standalone PostgreSQL service for databases.                                            |
-| [PostgreSQL Custom](postgres-custom) | Standalone PostgreSQL service with some customizations and a init script for databases. |
-| [Grafana](grafana)                   | Standalone Grafana service for visualization.                                           |
-| [Windows](windows)                   | Windows on docker                                                                       |
-| [Open WebUI](openwebui)              | Standalone Open WebUI for connecting to remote Ollama                                   |
-| [Google Chrome](chrome-tigervnc)     | Google Chrome running on a TigerVNC server with Openbox as the window manager.          |
-| [Mozilla Firefox](firefox-tigervnc)  | Mozilla Firefox running on a TigerVNC server with Openbox as the window manager.        |
+## Identity & Security
 
-## Multi-Service Examples
+| Services                                                       | Description                                                                                                                     |
+| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| [Keycloak](keycloak)                                           | Manage user identities, secure apps, and enable SSO with OAuth2/OpenID integration.                                             |
+| [Prometheus / Grafana / Keycloak](prometheus-grafana-keycloak) | Secure Grafana dashboards with Keycloak OIDC, auto-assign Viewer role, and pull metrics from Prometheus as a locked datasource. |
 
-These examples demonstrate the setup of multiple integrated services using docker compose.
+## Monitoring & Observability
 
-| Services                                                           | Description                                                                                                                                                                                                                                                                                          |
-| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Prometheus / Grafana](prometheus-grafana)                         | Integration of `Prometheus` and `Grafana`. `Grafana` is pre-configured to use `Prometheus` as an uneditable datasource.                                                                                                                                                                              |
-| [Prometheus / Grafana / Keycloak](prometheus-grafana-keycloak)     | Integration of `Prometheus`, `Grafana`, and `Keycloak`. `Grafana` is configured with OIDC authentication via `Keycloak`, granting all authenticated users the `Viewer` role, and `Prometheus` is set as an uneditable datasource.                                                                    |
-| [Micrometer / Prometheus / Grafana](micrometer-prometheus-grafana) | Integration of a java app exposing default metrics using [Micrometer](https://micrometer.io/), `Prometheus`, and `Grafana`. `Grafana` is provisioned with `Prometheus` datasource and a slightly modified [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701-jvm-micrometer/) dashboard. |
-| [Wordpress / MySQL](wordpress-mysql)                               | Integration of `Wordpress` and `MySQL`.                                                                                                                                                                                                                                                              |
-| [BookStack / MySQL](bookstack-mysql)                               | Integration of `BookStack` and `MySQL`.                                                                                                                                                                                                                                                              |
-| [Ollama / Open WebUI](ollama-openwebui)                            | Integration of `Ollama` and `Open WebUI`. Ollama for running large language models and Open WebUI for having chat like interface.                                                                                                                                                                    |
+| Services                                                           | Description                                                                                                               |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| [Prometheus](prometheus)                                           | Monitor systems and apps, collect metrics, and trigger alerts in real time.                                               |
+| [Grafana](grafana)                                                 | Create interactive dashboards to visualize metrics and application insights.                                              |
+| [Prometheus / Grafana](prometheus-grafana)                         | Preconfigured stack where Grafana visualizes metrics from Prometheus as a locked datasource.                              |
+| [Micrometer / Prometheus / Grafana](micrometer-prometheus-grafana) | Java app exposing Micrometer metrics to Prometheus, with Grafana provisioned for a customized JVM (Micrometer) dashboard. |
 
-## Tools
+## Databases
 
-| Tools              | Description                                    |
-| ------------------ | ---------------------------------------------- |
-| [TexLive](texlive) | Use texlive to generate PDFs from LaTeX files. |
+| Services                             | Description                                                                                       |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| [PostgreSQL](postgres)               | Store, query, and manage structured data with a high-performance SQL database.                    |
+| [PostgreSQL Custom](postgres-custom) | Launch a preconfigured PostgreSQL with custom settings and auto-initialized databases.            |
+| [WordPress / MySQL](wordpress-mysql) | Launches WordPress with a MySQL backend, ready for initial setup through the WordPress installer. |
+| [BookStack / MySQL](bookstack-mysql) | Knowledge management platform powered by BookStack with MySQL database storage.                   |
+
+## AI & Machine Learning
+
+| Services                                | Description                                                                                           |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [Open WebUI](openwebui)                 | Interact with a remote Ollama AI model through a clean, browser-based UI.                             |
+| [Ollama / Open WebUI](ollama-openwebui) | Run large language models with Ollama and interact through a browser-based Open WebUI chat interface. |
