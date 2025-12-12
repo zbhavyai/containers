@@ -2,13 +2,13 @@ name: ollama-openwebui
 
 services:
   ollama:
-    image: docker.io/ollama/ollama:0.7.1
+    image: docker.io/ollama/ollama:0.13.3
     container_name: ollama
     ports:
       - 11434:11434
     restart: unless-stopped
     volumes:
-      - ollama:/root/.ollama
+      - ~/.ollama:/root/.ollama:rw,Z
     deploy:
       resources:
         reservations:
@@ -31,5 +31,4 @@ services:
       - open-webui:/app/backend/data
 
 volumes:
-  ollama:
   open-webui:
