@@ -1,0 +1,25 @@
+name: vllm
+
+services:
+  vllm:
+    image: docker.io/vllm/vllm-openai:v0.12.0
+    container_name: vllm
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - ~/.cache/huggingface:/root/.cache/huggingface:rw,Z
+    environment:
+      - HUGGING_FACE_HUB_TOKEN=${HF_TOKEN}
+    command: >
+      --model google/gemma-3-4b-it
+      --gpu-memory-utilization 0.4
+      --max-model-len 4096
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

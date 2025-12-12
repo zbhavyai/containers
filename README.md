@@ -6,7 +6,7 @@ Curated list of usage of various tools and services using containers.
 [![License](https://img.shields.io/github/license/zbhavyai/containers?label=License)](https://github.com/zbhavyai/containers/blob/main/LICENSE)
 
 > [!IMPORTANT]
-> You'll notice `compose.yaml` uses `:ro,Z` on certain volume mounts.
+> You'll notice `compose.yaml` uses `:ro,Z` on bind mounts.
 >
 > - `:ro` makes the mount read-only. Its optional, but protects host config from edits.
 > - `:Z` is required on Fedora and other SELinux-enforcing systems when bind-mounting host files or directories so the container can access them. This is usually not needed on Ubuntu, which use AppArmor instead of SELinux.
@@ -40,5 +40,6 @@ Curated list of usage of various tools and services using containers.
 
 ### AI & Machine Learning
 
+- [vLLM](vllm): Run large language models efficiently with vLLM, optimized for low-latency inference.
 - [Open WebUI](openwebui): Interact with a remote Ollama AI model through a clean, browser-based UI.
 - [Ollama / Open WebUI](ollama-openwebui): Run large language models with Ollama and interact through a browser-based Open WebUI chat interface.
