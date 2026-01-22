@@ -12,8 +12,8 @@ services:
     volumes:
       - keycloak_data:/opt/keycloak/data
     environment:
-      - KEYCLOAK_ADMIN=admin
-      - KEYCLOAK_ADMIN_PASSWORD=admin
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
 
 volumes:
   keycloak_data:

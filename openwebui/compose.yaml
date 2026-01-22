@@ -8,7 +8,7 @@ services:
       - 10000:8080
     restart: unless-stopped
     environment:
-      - OLLAMA_BASE_URL=http://testnet2:11434
+      OLLAMA_BASE_URL: http://testnet2:11434
     volumes:
       - open-webui:/app/backend/data
 

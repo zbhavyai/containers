@@ -11,8 +11,8 @@ services:
       - 6100:6100
     restart: unless-stopped
     environment:
-      - DISPLAY=:200
-      - RESOLUTION=1920x1080
+      DISPLAY: ":200"
+      RESOLUTION: 1920x1080
     volumes:
       - chrome-data:/home/chromeuser/.config/google-chrome
 

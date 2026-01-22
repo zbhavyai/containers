@@ -10,7 +10,7 @@ services:
     volumes:
       - ~/.cache/huggingface:/root/.cache/huggingface:rw,Z
     environment:
-      - HUGGING_FACE_HUB_TOKEN=${HF_TOKEN}
+      HUGGING_FACE_HUB_TOKEN: ${HF_TOKEN}
     command: >
       --model google/gemma-3-4b-it
       --gpu-memory-utilization 0.8

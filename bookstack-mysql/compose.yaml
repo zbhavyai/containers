@@ -8,10 +8,10 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     environment:
-      - MYSQL_DATABASE=docsite
-      - MYSQL_USER=docsite
-      - MYSQL_PASSWORD=docsite
-      - MYSQL_ROOT_PASSWORD=docsite
+      MYSQL_DATABASE: docsite
+      MYSQL_USER: docsite
+      MYSQL_PASSWORD: docsite
+      MYSQL_ROOT_PASSWORD: docsite
     networks:
       - bm_net
 
@@ -24,17 +24,17 @@ services:
     ports:
       - 6875:80
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Edmonton
-      - APP_URL=http://localhost:6875
-      - APP_KEY=base64:Y7MrPaAA74VNn3yq2PI24sviyTezUrNpsnIfoM0m1X4=
-      - DB_HOST=db
-      - DB_PORT=3306
-      - DB_USERNAME=docsite
-      - DB_PASSWORD=docsite
-      - DB_DATABASE=docsite
-      - QUEUE_CONNECTION=database
+      PUID: "1000"
+      PGID: "1000"
+      TZ: America/Edmonton
+      APP_URL: http://localhost:6875
+      APP_KEY: base64:Y7MrPaAA74VNn3yq2PI24sviyTezUrNpsnIfoM0m1X4=
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_USERNAME: docsite
+      DB_PASSWORD: docsite
+      DB_DATABASE: docsite
+      QUEUE_CONNECTION: database
     networks:
       - bm_net
 

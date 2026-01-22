@@ -8,8 +8,8 @@ services:
       - 3000:3000
     restart: always
     environment:
-      - AWS_SDK_LOAD_CONFIG=true
-      - GF_AUTH_SIGV4_AUTH_ENABLED=true
+      AWS_SDK_LOAD_CONFIG: "true"
+      GF_AUTH_SIGV4_AUTH_ENABLED: "true"
     volumes:
       - ./grafana.ini:/etc/grafana/grafana.ini:ro,Z
       - grafana_data:/var/lib/grafana

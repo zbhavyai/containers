@@ -30,7 +30,7 @@ services:
     image: docker.io/grafana/grafana:7.5.15
     container_name: grafana
     environment:
-      - GF_SERVER_HTTP_PORT=3007
+      GF_SERVER_HTTP_PORT: "3007"
     ports:
       - 3007:3007
     restart: unless-stopped

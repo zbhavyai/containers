@@ -43,8 +43,8 @@ services:
       - keycloak_data:/opt/keycloak/data
       - ./keycloak/my-realm.json:/opt/keycloak/data/import/my-realm.json:ro,Z
     environment:
-      - KEYCLOAK_ADMIN=admin
-      - KEYCLOAK_ADMIN_PASSWORD=admin
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
     networks:
       - pgk_net
 

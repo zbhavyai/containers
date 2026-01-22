@@ -8,8 +8,8 @@ services:
     ports:
       - 8080:8080
     environment:
-      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
-      - CASC_JENKINS_CONFIG=/var/jenkins_home/casc/jenkins_config.yaml
+      JAVA_OPTS: -Djenkins.install.runSetupWizard=false
+      CASC_JENKINS_CONFIG: /var/jenkins_home/casc/jenkins_config.yaml
     volumes:
       - jenkins_home:/var/jenkins_home
       - ./casc/plugins.txt:/usr/share/jenkins/ref/plugins.txt:ro,Z
