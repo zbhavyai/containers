@@ -5,7 +5,7 @@ Use texlive to generate PDFs from LaTeX files.
 ## Build the image
 
 ```shell
-podman image build --file ./Dockerfile --tag localhost/latex .
+podman image build --file ./Dockerfile --tag docker.io/zbhavyai/latex-xelatex-builder:latest .
 ```
 
 ## Generate the PDF
@@ -13,13 +13,13 @@ podman image build --file ./Dockerfile --tag localhost/latex .
 1. Add this alias to `~/.bashrc`. Note the use of `--privileged` or `:Z` to [disable SELinux host isolation](https://stackoverflow.com/a/64556930).
 
    ```shell
-   alias latex='podman container run --privileged --rm --volume "${PWD}:/data" localhost/latex'
+   alias latex='podman container run --privileged --rm --volume "${PWD}:/data" docker.io/zbhavyai/latex-xelatex-builder:latest'
    ```
 
    OR
 
    ```shell
-   alias latex='podman container run --rm --volume "${PWD}:/data:Z" localhost/latex'
+   alias latex='podman container run --rm --volume "${PWD}:/data:Z" docker.io/zbhavyai/latex-xelatex-builder:latest'
    ```
 
    > NOTE
